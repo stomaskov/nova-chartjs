@@ -149,7 +149,7 @@
               }
             }
           }
-          
+
           if(this.chartTooltips.callbacks !== undefined){
             const callbacklist = ["beforeTitle", "title", "afterTitle", "beforeBody", "beforeLabel", "label", "labelColor", "labelTextColor", "afterLabel", "afterBody", "beforeFooter", "footer", "afterFooter"];
             var i;
@@ -210,7 +210,7 @@
           if(this.showAdvanceFilter == true) this.card.options.advanceFilterSelected = this.advanceFilterSelected != undefined ? this.advanceFilterSelected : false;
 
           // Use Model
-          Nova.request().get("/coroowicaksono/check-data/endpoint/", {
+          Nova.request().get("/coroowicaksono/check-data/endpoint", {
             params: {
                 model: this.card.model,
                 series: this.card.series,

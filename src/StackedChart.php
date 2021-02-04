@@ -65,4 +65,11 @@ class StackedChart extends Card
     {
         return $this->withMeta([ 'join' => ['joinTable' => $joinTable, 'joinColumnFirst' => $joinColumnFirst, 'joinEqual' => $joinEqual, 'joinColumnSecond' => $joinColumnSecond] ]);
     }
+
+    public function jsonSerialize()
+    {
+        return array_merge([
+            'uriKey' => Str::random(32),
+        ], parent::jsonSerialize());
+    }
 }

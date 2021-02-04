@@ -3,6 +3,7 @@
 namespace Coroowicaksono\ChartJsIntegration;
 
 use Laravel\Nova\Card;
+use Illuminate\Support\Str;
 
 class LineChart extends Card
 {
@@ -66,5 +67,12 @@ class LineChart extends Card
     public function join(string $joinTable, string $joinColumnFirst, string $joinEqual, string $joinColumnSecond): self
     {
         return $this->withMeta([ 'join' => ['joinTable' => $joinTable, 'joinColumnFirst' => $joinColumnFirst, 'joinEqual' => $joinEqual, 'joinColumnSecond' => $joinColumnSecond] ]);
+    }
+
+    public function jsonSerialize()
+    {
+        return array_merge([
+            'uriKey' => Str::random(32),
+        ], parent::jsonSerialize());
     }
 }

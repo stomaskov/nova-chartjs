@@ -123,7 +123,7 @@
               }
             }
           }
-          
+
           if(this.chartTooltips.callbacks !== undefined){
             const callbacklist = ["beforeTitle", "title", "afterTitle", "beforeBody", "beforeLabel", "label", "labelColor", "labelTextColor", "afterLabel", "afterBody", "beforeFooter", "footer", "afterFooter"];
             var i;
@@ -144,7 +144,7 @@
             labels: this.card.options.xaxis.categories,
             datasets: this.card.series,
           }
-          
+
           // START == SETUP POPUP
           const sweetAlertWithLink = this.sweetAlert;
           if(sweetAlertWithLink != undefined) {
@@ -204,7 +204,7 @@
           if(this.showAdvanceFilter == true) this.card.options.advanceFilterSelected = this.advanceFilterSelected != undefined ? this.advanceFilterSelected : false;
 
           // Use Model
-          Nova.request().get("/coroowicaksono/check-data/circle-endpoint/", {
+          Nova.request().get("/coroowicaksono/check-data/circle-endpoint", {
             params: {
                 model: this.card.model,
                 series: this.card.series,
@@ -218,7 +218,7 @@
               labels: data.dataset.xAxis,
               datasets: data.dataset.yAxis,
             };
-          
+
             // START == SETUP POPUP
             const sweetAlertWithLink = this.sweetAlert;
             if(sweetAlertWithLink != undefined) {
@@ -259,7 +259,7 @@
               };
             };
             // END == SETUP POPUP
-            
+
             if( this.card.options.showPercentage != undefined ) {
               if( this.card.options.showPercentage == true ) {
                 let dataArr = data.dataset.yAxis[0].data;

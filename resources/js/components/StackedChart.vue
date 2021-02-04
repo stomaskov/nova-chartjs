@@ -46,7 +46,7 @@
         filledAdvancedList[i] = {value: index, text: btnFilterList[index]};
         i++;
       }
-      
+
       return {
         datacollection: {},
         options: {},
@@ -212,7 +212,7 @@
           if(this.showAdvanceFilter == true) this.card.options.advanceFilterSelected = this.advanceFilterSelected != undefined ? this.advanceFilterSelected : false;
 
           // Use Model
-          Nova.request().get("/coroowicaksono/check-data/endpoint/", {
+          Nova.request().get("/coroowicaksono/check-data/endpoint", {
             params: {
                 model: this.card.model,
                 series: this.card.series,
